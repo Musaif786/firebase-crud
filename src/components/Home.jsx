@@ -38,7 +38,7 @@ export const Home = () => {
                        <td>{data[id].comment}</td>
 
                         <td>{data[id].email}</td>
-                       <td>{data[id].contact}</td> 
+                       <td>{data[id].contact}</td>
 
                        {/* <h1>{data[id].name}</h1> */}
                        
