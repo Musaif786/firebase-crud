@@ -7,7 +7,8 @@ import {toast} from "react-toastify";
 const initialstate = {
     name:"",
     email:"",
-    contact:""
+    contact:"",
+    comment:""
 }
 
 
@@ -15,7 +16,7 @@ const AddEdit = () => {
     const [state,  setState]= useState(initialstate);
     const [data, setData] = useState({});
 
-    const {name,email,contact}= state;
+    const {name,email,contact,comment}= state;
 
     const history = useNavigate();
     const handleinput = (e)=>{
@@ -35,11 +36,12 @@ const AddEdit = () => {
                toast.success("contact added successfully");
            }
        });
-       setTimeout(()=> history("/"),5000);
+       setTimeout(()=> history("/"),2000);
    }
     }
     return (
-        <div style={{marginTop: "50px"}}>
+        <div style={{marginTop: "8px"}}>
+         <h1>Contact</h1>
             <form onSubmit={handlesubmit} style={{margin: "auto",padding:"15px",alignContent:"center",maxWidth:"400px"}}>
   <label htmlFor="name">Name</label>
   <input type="text" name="name" id="name" placeholder='fullname' value={name} onChange={handleinput} />
@@ -49,7 +51,11 @@ const AddEdit = () => {
       
   <label htmlFor="contact">contact</label>
   <input type="number" name="contact" id="contact" placeholder='contact' value={contact} onChange={handleinput} />
-      <input type="submit" value="value"/>
+
+  <label htmlFor="comment">Comment</label>
+  <textarea cols="40" rows="5" type="text" name="comment" id="comment" placeholder='comment here...' value={comment} onChange={handleinput} />
+
+      <input type="submit" value="Submit"/>
             </form>
         </div>
     )
