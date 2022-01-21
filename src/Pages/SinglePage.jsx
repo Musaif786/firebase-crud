@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {db} from "../firebase";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged, signOut} from "firebase/auth";
-import {auth} from "../firebase";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged, signOut,signInWithPopup} from "firebase/auth";
+import {auth, provider} from "../firebase";
 import { toast } from 'react-toastify';
+import {useNavigate} from "react-router-dom";
 
 function SinglePage() {
   const [email , setEmail] = useState("");
@@ -11,6 +12,7 @@ function SinglePage() {
   const [cemail , setCemail] = useState("");
 
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
   onAuthStateChanged(auth, (currentUser)=>{
     setUser(currentUser);
@@ -19,7 +21,7 @@ function SinglePage() {
   const signup = async ()=>{
     try{
 
-      const user = await createUserWithEmailAndPassword(auth,email,pass);
+      const users = await createUserWithEmailAndPassword(auth,email,pass);
       toast.success("successfull login");
       
     }catch(error){
@@ -48,6 +50,11 @@ function SinglePage() {
     }
 
   } 
+
+  const signinwithgoogle = ()=>{
+    signInWithPopup(auth, provider);
+
+  }
   return <>
       <div>
         {/* signin up */}
@@ -83,6 +90,10 @@ function SinglePage() {
         <h2>User details :  {user?.email}</h2>
 
         <button onClick={logout}>Logout</button>
+      </div>
+
+      <div>
+        <button onClick={signinwithgoogle}>signinwithgoogle</button>
       </div>
   </>;
 }
