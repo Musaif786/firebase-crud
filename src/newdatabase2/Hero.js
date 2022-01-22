@@ -6,7 +6,7 @@ function Hero({logout,authListtener ,user}) {
           <h1>Welcome</h1>
           <button onClick={logout}>Logout</button>
 
-          <h2>User loggined:  {user?.email}</h2>
+          <h2>Hello {user?.email} welcome to Musaif React-app</h2>
       </div>
   </>;
 }

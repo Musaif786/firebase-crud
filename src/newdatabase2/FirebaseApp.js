@@ -16,7 +16,7 @@ function FirebaseApp() {
     const [hasaccount,setHasaccount] = useState(false);
   const clearInput =()=>{
       setEmail("");
-      setEmail("");
+      setPassword("");
   }
   const clearError = ()=>{
       setEmailerror("");
