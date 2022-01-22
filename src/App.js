@@ -56,11 +56,11 @@ function App() {
     <ToastContainer position='top-center'/>
     <Routes>
       
-          {/* <Route exact path="/" element={<Home/>}/>
+         <Route exact path="/home" element={<Home/>}/>
            <Route path="/add" element={<AddEdit />} />
           <Route path="/update/:id" element={<AddEdit />} />
           <Route path="/view/:id" element={<View/>} /> 
-          <Route path="/about" element={<About/>} /> */}
+          <Route path="/about" element={<About/>} /> 
 
           {/* <Route exact path="/" element={<Homepage/>}/>
         <Route path="/postpage" element={<Createpost/>} />

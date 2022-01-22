@@ -4,6 +4,7 @@ import React ,{useState,useEffect} from 'react';
 import { toast } from 'react-toastify';
 import Hero from './Hero';
 import Logins from './Logins';
+import Headers from "../components/Header";
 
 
 function FirebaseApp() {
@@ -89,7 +90,11 @@ function FirebaseApp() {
       }
   return <>
       <div>
-     {user ? ( <Hero logout={logout} authListtener={authListtener} user={user}/>):(
+     {user ? (<>
+              <Headers/> 
+      <Hero logout={logout} authListtener={authListtener} user={user}/>
+              </>
+     ):(
 
      
       <Logins email={email} setEmail={setEmail} password={password} setPassword={setPassword} login={login} signup={signup} hasaccount={hasaccount} setHasaccount={setHasaccount} emailerror={emailerror} passworderror={passworderror} signinwithgoogle={signinwithgoogle}/>

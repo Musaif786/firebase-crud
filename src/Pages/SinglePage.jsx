@@ -10,8 +10,10 @@ function SinglePage() {
   const [pass , setPass] = useState("");
   const [cpass , setCpass] = useState("");
   const [cemail , setCemail] = useState("");
-
+  const [hasaccount,setHasaccount] = useState(false);
   const [user, setUser] = useState({});
+
+
   const navigate = useNavigate();
 
   onAuthStateChanged(auth, (currentUser)=>{
@@ -55,47 +57,28 @@ function SinglePage() {
     signInWithPopup(auth, provider);
 
   }
-  return <>
+  return( <>
+      
       <div>
-        {/* signin up */}
-        <h1>Signup</h1>
-        <input placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} />
+
+        { user ? (<> 
+        <button onClick={logout }>Logout</button>
+         <h2>User details :  {user?.email}</h2>
+         </>):(<>
+          <div>
+        <label htmlFor="email">Email</label>
+    <input type="text" autoFocus required name="" id="email" placeholder='email'  onChange={(e)=>{setCemail(e.target.value)}} />
+<label htmlFor="password">Password</label>
+    <input type="text" name="password" id="password" placeholder='password'  onChange={(e)=>{setCpass(e.target.value)}} />
+<button onClick={login }>Submit</button>
+        </div>
+        <button  onClick={ signinwithgoogle }>signinwithgoogle</button>
+        </>) }
+      </div>
 
         
-        <input placeholder='password' onChange={(e)=>{setPass(e.target.value)}} />
-
-        <button onClick={signup}>Submit</button>
-      </div>
-      <hr /><hr />
-
-
-
-
-
-
-      {/* login */}
-      <div>
-
-      <h1>Login </h1>
-      <input placeholder='Conform Email' onChange={(e)=>{setCemail(e.target.value)}} />
-
-        
-<input placeholder='Conform password' onChange={(e)=>{setCpass(e.target.value)}} />
-
-<button onClick={login}>Submit</button>
-      </div>
-
-
-      <div>
-        <h2>User details :  {user?.email}</h2>
-
-        <button onClick={logout}>Logout</button>
-      </div>
-
-      <div>
-        <button onClick={signinwithgoogle}>signinwithgoogle</button>
-      </div>
-  </>;
+      
+  </>);
 }
 
 export default SinglePage;

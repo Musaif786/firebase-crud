@@ -71,7 +71,7 @@ const onDelete=(id)=>{
             })}
           </tbody>
         </table>
-        <h2>Home </h2>
+        {/* <h2>Home </h2> */}
       </div>
     </>
   );

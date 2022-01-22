@@ -36,7 +36,7 @@ const Header = () => {
   </li> */}
   
   
-  { !(isauth == false) ? (
+  {/* { !(isauth == false) ? (
 
   
   <Link class="nav-link " aria-current="page" to="/login">Login page</Link> ) : (
@@ -48,9 +48,11 @@ const Header = () => {
     </li>
     </>
 
-  )}
+  )} */}
 
-
+  <Link class="nav-link " aria-current="page" to="/home">Database</Link> 
+  <Link class="nav-link " aria-current="page" to="/postpage">Comment box</Link> 
+  <Link class="nav-link " aria-current="page" to="/test">testing</Link> 
   
 </ul>
 
