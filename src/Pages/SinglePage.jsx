@@ -16,8 +16,8 @@ function SinglePage() {
 
   const navigate = useNavigate();
 
-  onAuthStateChanged(auth, (currentUser)=>{
-    setUser(currentUser);
+  onAuthStateChanged(auth, (user)=>{
+    setUser(user);
   })
 
   const signup = async ()=>{
@@ -66,6 +66,7 @@ function SinglePage() {
          <h2>User details :  {user?.email}</h2>
          </>):(<>
           <div>
+          <h1>Login</h1>
         <label htmlFor="email">Email</label>
     <input type="text" autoFocus required name="" id="email" placeholder='email'  onChange={(e)=>{setCemail(e.target.value)}} />
 <label htmlFor="password">Password</label>

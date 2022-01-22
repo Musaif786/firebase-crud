@@ -57,7 +57,7 @@ function App() {
     <Routes>
       
          <Route exact path="/home" element={<Home/>}/>
-           <Route path="/add" element={<AddEdit />} />
+           <Route path="/postpage" element={<AddEdit />} />
           <Route path="/update/:id" element={<AddEdit />} />
           <Route path="/view/:id" element={<View/>} /> 
           <Route path="/about" element={<About/>} /> 
