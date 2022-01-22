@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged, signOut,signInWithPopup} from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged, signOut,signInWithRedirect,signInWithPopup} from "firebase/auth";
 import {auth, provider} from "../firebase";
 import React ,{useState,useEffect} from 'react';
 import { toast } from 'react-toastify';
@@ -77,9 +77,12 @@ function FirebaseApp() {
        authListtener();
     },[]);
 
+    // sign with google
+
     const signinwithgoogle = ()=>{
-        signInWithPopup(auth, provider);
-    
+        { signInWithPopup(auth, provider) ||
+        signInWithRedirect(auth, provider)
+        }
       }
   return <>
       <div>
