@@ -2,7 +2,6 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateCh
 import {auth, provider} from "../firebase";
 import React ,{useState,useEffect} from 'react';
 import { toast } from 'react-toastify';
-import fireDb from "../firebase";
 import Hero from './Hero';
 import Logins from './Logins';
 
@@ -80,10 +79,10 @@ function FirebaseApp() {
     // sign with google
 
     const signinwithgoogle = ()=>{
-        {
-        signInWithRedirect(auth, provider)
+        
+        signInWithRedirect(auth, provider);
         //  signInWithPopup(auth, provider)
-        }
+        
       }
   return <>
       <div>
