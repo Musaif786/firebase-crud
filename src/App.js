@@ -71,11 +71,11 @@ function App() {
 
 
         {/* main and important one full backed */}
-        <Route exact path="/" element={<SinglePage/>}/> 
+        <Route exact path="/test" element={<SinglePage/>}/> 
 
         {/* <Route exact path="/" element={<Forgotpass/>}/> */}
   
-  {/* <Route exact path="/" element={<FirebaseApp/>}/> */}
+   <Route exact path="/" element={<FirebaseApp/>}/>
     </Routes>
   </BrowserRouter>,
     </>

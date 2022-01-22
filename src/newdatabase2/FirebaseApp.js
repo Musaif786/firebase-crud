@@ -61,14 +61,18 @@ function FirebaseApp() {
     }
     
     const authListtener = ()=>{
-        auth.onAuthStateChanged(user =>{
-            if(user){
-                clearInput();
-                setUser(user);
-            }else{
-                setUser("");
-            }
-        })
+        onAuthStateChanged(auth, (user) =>{
+
+            setUser(user);
+        
+        //     if(user){
+        //         clearInput();
+        //         setUser(user);
+        //     }else{
+        //         setUser("");
+        //     }
+        // 
+    })
     }
 
 
