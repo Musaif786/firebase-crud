@@ -11,7 +11,8 @@ function Logins(props) {
           hasaccount,
           setHasaccount,
           emailerror,
-          passworderror} = props;
+          passworderror,
+          signinwithgoogle} = props;
   return( <> 
     <div className='container mt-5'>
     <div style={{maxWidth:"400px", margin:"0px auto"}}>
@@ -32,6 +33,7 @@ function Logins(props) {
       <button onClick={signup} className='btn btn-success mb-2'>Sign-Up</button>
       <p>already have an accont ? <span   role="button" className=' pe-auto text-primary'  onClick={()=>{setHasaccount(!hasaccount)}}>Login</span></p>
   </>)}
+  <button onClick={signinwithgoogle} className='btn btn-primary mb-2'>Login with Gmail</button>
     </div>
     </div>
     </div>

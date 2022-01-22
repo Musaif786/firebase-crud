@@ -75,13 +75,18 @@ function FirebaseApp() {
 
     useEffect(()=>{
        authListtener();
-    },[])
+    },[]);
+
+    const signinwithgoogle = ()=>{
+        signInWithPopup(auth, provider);
+    
+      }
   return <>
       <div>
      {user ? ( <Hero logout={logout} authListtener={authListtener} user={user}/>):(
 
      
-      <Logins email={email} setEmail={setEmail} password={password} setPassword={setPassword} login={login} signup={signup} hasaccount={hasaccount} setHasaccount={setHasaccount} emailerror={emailerror} passworderror={passworderror}/>
+      <Logins email={email} setEmail={setEmail} password={password} setPassword={setPassword} login={login} signup={signup} hasaccount={hasaccount} setHasaccount={setHasaccount} emailerror={emailerror} passworderror={passworderror} signinwithgoogle={signinwithgoogle}/>
       )}
      
       </div>
