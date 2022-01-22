@@ -83,12 +83,9 @@ function FirebaseApp() {
     // sign with google
 
     const signinwithgoogle = ()=>{
-        
-       {
            signInWithPopup(auth, provider)
-           || 
-           signInWithRedirect(auth, provider)
-       }
+        //    signInWithRedirect(auth, provider)
+       
       }
   return <>
       <div>
