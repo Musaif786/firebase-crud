@@ -15,6 +15,8 @@ import Loginpage from './Pages/Loginpage';
 import {signOut} from 'firebase/auth';
 import {auth} from './firebase';
 import SinglePage from './Pages/SinglePage';
+import Forgotpass from "../src/backednew/Forgotpass/Forgotpass";
+import FirebaseApp from './newdatabase2/FirebaseApp';
 
 
 
@@ -68,9 +70,12 @@ function App() {
 
 
 
-        {/* one */}
-        <Route exact path="/" element={<SinglePage/>}/>
+        {/* main and important one full backed */}
+        {/* <Route exact path="/" element={<SinglePage/>}/> */}
 
+        {/* <Route exact path="/" element={<Forgotpass/>}/> */}
+  
+  <Route exact path="/" element={<FirebaseApp/>}/>
     </Routes>
   </BrowserRouter>,
     </>
